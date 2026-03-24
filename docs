@@ -1,0 +1,59 @@
+/dashboard
+ ├── index.html
+ ├── style.css
+ └── script.js
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Bota</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🤖 Můj Discord Bot Dashboard</h1>
+
+<div class="card">
+    <h2>Status bota</h2>
+    <p id="status">Načítání...</p>
+</div>
+
+<div class="card">
+    <h2>Počet uživatelů</h2>
+    <p id="users">0</p>
+</div>
+
+<div class="card">
+    <h2>Příkazy</h2>
+    <ul>
+        <li>/ban</li>
+        <li>/kick</li>
+        <li>/mute</li>
+        <li>/shop</li>
+    </ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+  body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.card {
+    background: #1e293b;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+// Fake data (můžeš později napojit na API)
+document.getElementById("status").innerText = "🟢 Online";
+document.getElementById("users").innerText = "123";
