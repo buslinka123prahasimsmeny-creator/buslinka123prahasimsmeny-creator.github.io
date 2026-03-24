@@ -1,42 +1,13 @@
 /dashboard
- ├── index.html
- ├── style.css
- └── script.js
+  └── index.html
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard Bota</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<title>Dashboard</title>
 
-<h1>🤖 Můj Discord Bot Dashboard</h1>
-
-<div class="card">
-    <h2>Status bota</h2>
-    <p id="status">Načítání...</p>
-</div>
-
-<div class="card">
-    <h2>Počet uživatelů</h2>
-    <p id="users">0</p>
-</div>
-
-<div class="card">
-    <h2>Příkazy</h2>
-    <ul>
-        <li>/ban</li>
-        <li>/kick</li>
-        <li>/mute</li>
-        <li>/shop</li>
-    </ul>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
-  body {
+<style>
+body {
     font-family: Arial;
     background: #0f172a;
     color: white;
@@ -54,6 +25,48 @@ h1 {
     width: 300px;
     border-radius: 10px;
 }
-// Fake data (můžeš později napojit na API)
-document.getElementById("status").innerText = "🟢 Online";
-document.getElementById("users").innerText = "123";
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #38bdf8;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<h1>🤖 Dashboard Bota</h1>
+
+<div class="card">
+    <h2>Status</h2>
+    <p id="status">Načítání...</p>
+</div>
+
+<div class="card">
+    <h2>Uživatelé</h2>
+    <p id="users">0</p>
+</div>
+
+<div class="card">
+    <h2>Akce</h2>
+    <button onclick="refresh()">🔄 Obnovit</button>
+</div>
+
+<br>
+<a href="/">⬅️ Zpět</a>
+
+<script>
+function refresh() {
+    document.getElementById("status").innerText = "🟢 Online";
+    document.getElementById("users").innerText = Math.floor(Math.random() * 500);
+}
+
+// auto load
+refresh();
+</script>
+
+</body>
+</html>
